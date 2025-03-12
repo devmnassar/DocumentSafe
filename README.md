@@ -1,6 +1,6 @@
 .NET CORE MVC Application
-Overview: Application To Store Your PDF Documents & Search Into Your PDF Files ,
-Structured With N-Tier Architecture.
+Overview: Application To Store Your PDF Documents & Search Into Your PDF Files.
+(Structured With N-Tier Architecture.)
 
 Features: Application Separated Into 2 Sections => 
  - Admin Area :
@@ -14,6 +14,6 @@ Features: Application Separated Into 2 Sections =>
 Specification:
 C# | SQL Database | Entity Framework Core | I-Repository & Unit-Of-Work Pattern |
 .Net Core Identity | Custom Roles Authorization | Handling Users Sessions |
-Client-Side & Server-Side Validations | IText Sharper | Toastr Notifications | Sweet Alerts
+Client-Side & Server-Side Validations | IText Sharper | DataTables | Toastr Notifications | Sweet Alerts
 
 Future Development : Can Add OCR Functionality To Convert Images To Extracted Text OR Convert It To PDF File
