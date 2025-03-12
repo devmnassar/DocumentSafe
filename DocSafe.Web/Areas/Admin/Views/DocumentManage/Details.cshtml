@@ -1,0 +1,34 @@
+﻿@using DocSafe.Model.Models
+@model Document
+
+<h2>Document Details</h2>
+<input hidden asp-for="Id" />
+<table class="table table-bordered">
+    <tr><th width="15%">User Name</th><td>@Model.ApplicationUser.FullName</td></tr>
+    <tr><th width="15%">Document Name</th><td>@Model.Name</td></tr>
+    <tr><th width="15%">Uploaded Date</th><td>@Model.Added.ToString("yyyy-MM-dd")</td></tr>
+    <tr><th width="15%">Type</th><td>@Model.Type</td></tr>
+    <tr><th width="20%">Note</th><td>@Model.Note</td></tr>
+</table>
+
+<h3>PDF Preview</h3>
+<iframe src="@ViewBag.PdfUrl" width="100%" height="600px"></iframe>
+
+
+
+
+<a class="btn btn-primary" asp-area="Admin" asp-controller="DocumentManage" asp-action="Download" asp-route-id="@Model.Id">Download Document</a>
+<a class="btn btn-secondary" asp-area="Admin" asp-controller="DocumentManage" asp-action="Index">Back To List</a>
+<div class="row mt-2">
+ 
+        <input type="hidden" asp-for="Id" />
+        <input onclick="confirmDelete(@Model.Id)" value="Delete !!" class="btn btn-danger" />
+
+</div>
+@section Scripts {
+
+    @{
+        <script src="~/js/documentManage.js"></script>
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

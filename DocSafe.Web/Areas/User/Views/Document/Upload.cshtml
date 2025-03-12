@@ -1,0 +1,52 @@
+﻿@using DocSafe.Model.Models
+
+@model Document
+
+@{
+	ViewData["Title"] = "Upload Document";
+}
+
+
+<div class="row pt-4 pb-4">
+	<div class="col-12" style="justify-items:center">
+		<div class="col-6 text-center center">
+			<h3 width="50%" class="text-primary text-white text-center" style="border-radius:20px; background-color:#0D6EFD;height: 50px;align-content: center;">Upload Document</h3>
+
+		</div>
+	</div>
+</div>
+<form method="post" enctype="multipart/form-data" asp-controller="Document" asp-action="Upload">
+	<input hidden asp-for="Id" />
+	@* 	<div class="mb-3">
+		<label asp-for="Name" class="form-label"></label>
+		<input  asp-for="Name" class="form-control">
+		<span asp-validation-for="Name" class="text-danger"></span>
+	</div> *@
+
+	<div class="mb-3">
+
+		<label asp-for="Type" class="form-label"></label>
+		<input asp-for="Type" value="PDF" readonly class="form-control">
+		<span asp-validation-for="Type" class="text-danger"></span>
+		<div class="mb-3">
+
+			<label asp-for="Note" class="form-label"></label>
+			<textarea asp-for="Note" rows="3" class="form-control"></textarea>
+			<span asp-validation-for="Note" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="mb-3">
+		<label for="file" class="form-label">Select PDF File</label>
+		<input type="file" name="file" class="form-control" required accept=".pdf" />
+		<span class="text-danger">Only Upload PDF Document Files</span>
+	</div>
+	<button type="submit" class="btn btn-primary">Upload</button>
+
+</form>
+
+@section Scripts {
+	<script src="~/js/site.js"></script>
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
